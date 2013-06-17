@@ -1,13 +1,7 @@
-'use strict';
-
-angular.module('seedsApp', [])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+// The app/scripts/app.js file, which defines our AngularJS app
+define(['angular', 'controllers/controllers',
+  'services/services', 'filters/filters',
+  'directives/directives'], function (angular) {
+  return angular.module('seedsApp', ['controllers', 'services',
+    'filters', 'directives']);
+});
