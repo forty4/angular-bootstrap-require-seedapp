@@ -3,6 +3,11 @@ define(['angular', 'controllers/controllers',
   'services/services', 'filters/filters',
   'directives/directives'], function (angular) {
   'use strict';
-  return angular.module('seedsApp', ['controllers', 'services',
-    'filters', 'directives']);
+  return angular.module('seedsApp', [
+    'controllers',
+    'services',
+    'filters',
+    'directives',
+    'ui.state'
+  ]);
 });
