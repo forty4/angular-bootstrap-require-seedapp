@@ -16,6 +16,7 @@ require.config({
     jqueryMobileOrientationChange: 'vendor/jquery-mobile/orientationchange',
     jqueryMobileSupportOrientation: 'vendor/jquery-mobile/jquery.mobile.support.orientation',
     jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize',
+    bootstrap: 'vendor/bootstrap/dist/js/bootstrap'
   },
   shim: {
     angular: {
@@ -46,6 +47,9 @@ require.config({
     jqueryMobileOrientationChange: {
       deps: [ 'jquery', 'jqueryMobileSupportOrientation', 'jqueryMobileThrottledResize']
     },
+    bootstrap: {
+      deps: [ 'jquery' ]
+    }
   },
   locale: localStorage.getItem('locale') || 'en'
 });
@@ -62,6 +66,11 @@ require([
   'angularSanitize',
   'angularUIRouter',
 
+  // 3rd party libraries
+  'lodash',
+  'jqueryMobileOrientationChange',
+  'bootstrap',
+
   // User scripts - Any individual controller, service, directive or filter file
   'services/restService',
   'services/logger',
@@ -73,11 +82,7 @@ require([
   'directives/dwAccordion',
   'directives/dwExpander',
   'directives/dwNoti',
-  'directives/ngbkFocus',
-
-  // 3rd party libraries
-  'lodash',
-  'jqueryMobileOrientationChange'
+  'directives/ngbkFocus'
 ],
   function (angular, app, domReady) {
     'use strict';
@@ -130,7 +135,7 @@ require([
         }]);
 
     domReady(function() {
-      //angular.bootstrap(document, ['seedsApp']);
+      angular.bootstrap(document, ['seedsApp']);
 
       // The following is required if you want AngularJS Scenario tests to work
       $('html').addClass('ng-app: seedsApp');

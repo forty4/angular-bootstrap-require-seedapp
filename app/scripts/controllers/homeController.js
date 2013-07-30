@@ -4,6 +4,8 @@ define(['controllers/controllers'],
     controllers.controller('HomeCtrl', ['$scope', '$$log',
       function($scope, $$log) {
         $$log.setCategory('HomeCtrl');
+
+        $scope.title = 'Home Controller';
       }
     ]);
   }

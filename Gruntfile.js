@@ -29,6 +29,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
+      recess: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['recess']
+      },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass']
@@ -122,6 +126,37 @@ module.exports = function (grunt) {
           dest: '.tmp/spec',
           ext: '.js'
         }]
+      }
+    },
+    less: {
+      server: {
+        files: {
+          '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+        }
+      },
+      dist: {
+        files: {
+          '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+        }
+      }
+    },
+    recess: {
+      options: {
+        compile: true
+      },
+      server: {
+        files: {
+          '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+        }
+      },
+      dist: {
+        files: {
+          '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+        }
       }
     },
     compass: {
@@ -265,7 +300,8 @@ module.exports = function (grunt) {
   grunt.registerTask('server', [
     'clean:server',
     'coffee:dist',
-    'compass:server',
+    'recess:server',
+//    'compass:server',
     'livereload-start',
     'connect:livereload',
     'open',
@@ -275,7 +311,8 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'coffee',
-    'compass',
+    'recess',
+//    'compass',
     'connect:test',
     'karma'
   ]);
@@ -285,14 +322,15 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'coffee',
-    'compass:dist',
+    'recess:dist',
+//    'compass:dist',
     'useminPrepare',
     'imagemin',
     'cssmin',
     'htmlmin',
     'concat',
     'copy',
-    'cdnify',
+//    'cdnify',
     'ngmin',
     'uglify',
     'rev',

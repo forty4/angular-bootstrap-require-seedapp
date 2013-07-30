@@ -1,20 +1,18 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner navbar-custom">
-    <div class="container">
-      <a id="slide-menu-button" href="#sidr-main" class="btn btn-navbar" style="float: left;">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#/">Seed</a>
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <button type="button" id="slide-menu-button" href="#sidr-main" class="navbar-toggle">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#/">Seed</a>
 
-      <div id="menu-list" class="nav-collapse collapse" ng-cloak>
-        <ul class="nav">
-          <li><a href="#/">{{ labels.titles.home }}</a></li>
-          <li><a href="#/about">{{ labels.titles.about }}</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
+    <div id="menu-list" class="nav-collapse collapse" ng-cloak>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/">{{ labels.titles.home }}</a></li>
+        <li><a href="#/about">{{ labels.titles.about }}</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
 
-    </div>
   </div>
 </div>
