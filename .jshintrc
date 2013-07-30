@@ -1,6 +1,7 @@
 {
-  "node": true,
   "browser": true,
+  "node": true,
+  "jquery": true,
   "es5": true,
   "esnext": true,
   "bitwise": true,
@@ -17,11 +18,17 @@
   "undef": true,
   "unused": false,
   "strict": true,
-  "trailing": true,
   "smarttabs": true,
+  "forin": true,
+  "noempty": true,
+  "nonew": true,
+  "maxlen": 110,
+  "evil": true,
+  "globalstrict": true,
+  "sub": true,
   "globals": {
     "angular": false,
     "define": false,
-    "$": false
+    "require": false
   }
 }

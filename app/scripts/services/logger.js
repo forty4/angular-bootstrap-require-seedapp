@@ -38,7 +38,7 @@ define(['services/services'],
         setLevel: function (level) {
           logLevel = level;
         }
-      }
+      };
     }]);
   }
 );

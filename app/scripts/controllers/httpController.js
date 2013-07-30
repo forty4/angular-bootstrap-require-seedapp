@@ -3,7 +3,7 @@ define(['controllers/controllers', 'services/httpService', 'services/restService
     'use strict';
     controllers.controller('HttpCtrl', ['$scope', '$http', 'HttpService', 'RestService', '$$log',
       function($scope, $http, HttpService, RestService, $$log) {
-        $scope.user = {}
+        $scope.user = {};
         $$log.setCategory('HttpCtrl');
         $$log.log('==============Begin==============');
         
@@ -12,7 +12,7 @@ define(['controllers/controllers', 'services/httpService', 'services/restService
           }).success(function (data, status, headers, config) {
             $scope.user.id = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         $$log.log('==============$http.post==============');
@@ -23,7 +23,7 @@ define(['controllers/controllers', 'services/httpService', 'services/restService
           ).success(function (data, status, headers, config) {
             $scope.user.text = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         $$log.log('==============$http with Service==============');
@@ -31,28 +31,28 @@ define(['controllers/controllers', 'services/httpService', 'services/restService
           .success(function (data, status, headers, config) {
             $scope.user.getCardResponse = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         HttpService.save({id: 10, bank: 'BOA'})
           .success(function (data, status, headers, config) {
             $scope.user.saveCardResponse = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         HttpService.query()
           .success(function (data, status, headers, config) {
             $scope.user.queryCardResponse = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         HttpService.charge({id: 50, bank: 'BOA'})
           .success(function (data, status, headers, config) {
             $scope.user.chargeCardResponse = data;
           }).error(function (data, status, headers, config) {
-            $$.error(data);
+            $$log.error(data);
           });
 
         $$log.log('==============$resource with Service==============');
@@ -68,14 +68,15 @@ define(['controllers/controllers', 'services/httpService', 'services/restService
           //each item is an instance of RestService 
           //expect(card instanceof RestService).toEqual(true);
 
-          card.name = "J. Smith";
+          card.name = 'J. Smith';
 
           //non-GET methods are mapped onto the instances
           card.$save({amount: 10, charge: true});
 
           //our custom method is mapped as well.
           card.$charge({amount:9.99});
-          //Makes a POST: /user/123/card/456?amount=9.99&charge=true // with data {id:456, number:'1234', name:'J. Smith'}
+          // Makes a POST: /user/123/card/456?amount=9.99&charge=true
+          // with data {id:456, number:'1234', name:'J. Smith'}
         });
       }
     ]);

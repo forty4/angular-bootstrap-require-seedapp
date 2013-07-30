@@ -13,8 +13,8 @@ require.config({
     domReady: '../components/requirejs-domready/domReady',
     i18n: '../components/requirejs-i18n/i18n',
     lodash: '../components/lodash/lodash',
-    jqueryMobileOrientationChange: "vendor/jquery-mobile/orientationchange",
-    jqueryMobileSupportOrientation: "vendor/jquery-mobile/jquery.mobile.support.orientation",
+    jqueryMobileOrientationChange: 'vendor/jquery-mobile/orientationchange',
+    jqueryMobileSupportOrientation: 'vendor/jquery-mobile/jquery.mobile.support.orientation',
     jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize',
   },
   shim: {
@@ -88,31 +88,30 @@ require([
                 when('', '/home').
                 when('/', '/home');
 
-            $stateProvider.
-                state('home', {
-                  url: '/home',
-                  templateUrl: 'views/home.html',
-                  controller: 'HomeCtrl'
-                }).
-                state('about', {
-                  url: '/about',
-                  abstract: true,
-                  templateUrl: 'views/about.html',
-                  controller: 'AboutCtrl'
-                }).
-                state('about.info', {
-                  url: '',
-                  views: {
-                    '@about': {
-                      templateUrl: 'views/about.info.html',
-                      controller: 'AboutInfoCtrl'
-                    },
-                    'hint@about': {
-                      templateUrl: 'views/about.hint.html',
-                      controller: 'AboutHintCtrl'
-                    }
-                  }
-                });
+            $stateProvider.state('home', {
+              url: '/home',
+              templateUrl: 'views/home.html',
+              controller: 'HomeCtrl'
+            }).
+            state('about', {
+              url: '/about',
+              abstract: true,
+              templateUrl: 'views/about.html',
+              controller: 'AboutCtrl'
+            }).
+            state('about.info', {
+              url: '',
+              views: {
+                '@about': {
+                  templateUrl: 'views/about.info.html',
+                  controller: 'AboutInfoCtrl'
+                },
+                'hint@about': {
+                  templateUrl: 'views/about.hint.html',
+                  controller: 'AboutHintCtrl'
+                }
+              }
+            });
 //                state('notifications', {
 //                  url: '/notifications?type',
 //                  templateUrl: 'views/notifications.html',

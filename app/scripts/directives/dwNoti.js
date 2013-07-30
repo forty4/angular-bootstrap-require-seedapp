@@ -1,6 +1,8 @@
 define(['directives/directives'], function (directives) {
   'use strict';
-  directives.directive('dwNoti', ['$rootScope', '$$RestService', '$$log', function ($rootScope, $$RestService, $$log) {
+  directives.directive('dwNoti',
+      ['$rootScope', '$$RestService', '$$log',
+      function ($rootScope, $$RestService, $$log) {
     return {
       restrict: 'EA',
       replace: true,
@@ -23,7 +25,7 @@ define(['directives/directives'], function (directives) {
           sensorStatus: 'sensors',
           sensorValue: 'sensors',
           storageStatus: 'storages'
-        }
+        };
 
         scope.checked = (noti.checked === 'true');
         scope.nodeType = nodeTypeSet[noti.type];

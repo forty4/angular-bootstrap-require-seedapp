@@ -1,4 +1,10 @@
-define(['controllers/controllers', 'i18n!nls/labels', 'jqueryAnimateEnhanced', 'sidr', 'touchSwipe'],
+define([
+  'controllers/controllers',
+  'i18n!nls/labels',
+  'jqueryAnimateEnhanced',
+  'sidr',
+  'touchSwipe'
+],
     function(controllers, labels) {
       'use strict';
       controllers.controller('MenuCtrl', ['$scope', '$timeout', '$location', '$$log',
@@ -65,7 +71,7 @@ define(['controllers/controllers', 'i18n!nls/labels', 'jqueryAnimateEnhanced', '
               slideMenuOpen();
             });
 
-            $('#' + sideMenuName).on('click', 'a', function (e) {
+            $('#' + sideMenuName).on('click', 'a', function () {
               slideMenuClose();
             });
           });

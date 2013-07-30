@@ -20,8 +20,8 @@
     "sparkline": "latest",
     "flot": "latest",
     "lodash": "latest",
-    "socket.io-client": "latest",
-    "bootstrap": "latest"
+    "socket.io-client": "latest"
+//    "bootstrap": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5",

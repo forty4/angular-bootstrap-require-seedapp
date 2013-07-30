@@ -11,7 +11,7 @@ define(['directives/directives'], function (directives) {
 
         this.gotOpened = function (selectedExpander) {
           angular.forEach(expanders, function (expander) {
-            if (selectedExpander != expander) {
+            if (selectedExpander !== expander) {
               expander.showMe = false;
             }
           });
