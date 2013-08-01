@@ -3,6 +3,7 @@ define({
   'root': {
     'titles': {
       'home': 'HOME',
+      'example': 'EXAMPLE',
       'about': 'ABOUT',
       'signout': 'SIGN OUT',
       'signin': 'SIGN IN'

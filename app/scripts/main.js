@@ -77,6 +77,7 @@ require([
   'services/userService',
   'controllers/homeController',
   'controllers/menuController',
+  'controllers/exampleController',
   'controllers/httpController',
   'controllers/aboutController',
   'directives/dwAccordion',
@@ -86,6 +87,8 @@ require([
 ],
   function (angular, app, domReady) {
     'use strict';
+
+    var mainApp = null;
 
     app.config(['$stateProvider', '$urlRouterProvider',
           function ($stateProvider, $urlRouterProvider) {
@@ -97,6 +100,17 @@ require([
               url: '/home',
               templateUrl: 'views/home.html',
               controller: 'HomeCtrl'
+            }).
+            state('example', {
+              url: '/example',
+              templateUrl: 'views/example.html',
+              controller: 'ExampleCtrl',
+              onEnter: function () {
+                //
+              },
+              onExit: function () {
+                //
+              }
             }).
             state('about', {
               url: '/about',
@@ -117,17 +131,6 @@ require([
                 }
               }
             });
-//                state('notifications', {
-//                  url: '/notifications?type',
-//                  templateUrl: 'views/notifications.html',
-//                  controller: 'NotificationsCtrl',
-//                  onEnter: function () {
-//                    //
-//                  },
-//                  onExit: function () {
-//                    //
-//                  }
-//                });
           }
         ]).run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
           $rootScope.$state = $state;
@@ -135,7 +138,7 @@ require([
         }]);
 
     domReady(function() {
-      angular.bootstrap(document, ['seedsApp']);
+      mainApp = mainApp || angular.bootstrap(document, ['seedsApp']);
 
       // The following is required if you want AngularJS Scenario tests to work
       $('html').addClass('ng-app: seedsApp');

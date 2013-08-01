@@ -1,6 +1,7 @@
 define({
   'titles': {
     'home': '홈',
+    'example': '예제',
     'about': 'about',
     'signout': '로그아웃',
     'signin': '로그인'

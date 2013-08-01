@@ -311,7 +311,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'coffee',
-    'recess',
+    'recess:server',
 //    'compass',
     'connect:test',
     'karma'
