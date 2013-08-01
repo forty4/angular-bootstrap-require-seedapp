@@ -132,7 +132,8 @@ module.exports = function (grunt) {
       server: {
         files: {
           '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
-          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less',
+          '<%= yeoman.app %>/styles/app.css': '<%= yeoman.app %>/styles/*.less'
         }
       },
       dist: {
@@ -149,7 +150,8 @@ module.exports = function (grunt) {
       server: {
         files: {
           '.tmp/styles/bootstrap.css': '<%= yeoman.app %>/styles/less_twitter_bootstrap/bootstrap.less',
-          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less'
+          '.tmp/styles/app.css': '<%= yeoman.app %>/styles/*.less',
+          '<%= yeoman.app %>/styles/app.css': '<%= yeoman.app %>/styles/*.less'
         }
       },
       dist: {
