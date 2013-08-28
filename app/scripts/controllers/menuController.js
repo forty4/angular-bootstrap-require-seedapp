@@ -42,7 +42,12 @@ define([
                 slideMenuClose();
               },
               tap: function (event, target) {
-                $(target).click();
+                var e = new $.Event('click');
+                if (event.changedTouches) {
+                  e.pageX = event.changedTouches[0].pageX;
+                  e.pageY = event.changedTouches[0].pageY;
+                }
+                $(target).trigger(e);
               }
             });
             $container.swipe('option', 'threshold', 125);

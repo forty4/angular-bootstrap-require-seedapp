@@ -52,9 +52,13 @@
     <div class="container" id="main-container">
       <div class="root-header" ng-include="'views/root-header.html'" ng-controller="MenuCtrl"></div>
       <div class="clearfix"></div>
-      <div ui-view></div>
+      <div class="main-view" ui-view></div>
       <div class="clearfix"></div>
-      <div class="root-footer" ui-view="root-footer"></div>
+      <div class="root-footer">
+        <div class="pull-left">Copyright &copy; 2013</div>
+        <div class="pull-right"><a href="http://www.seed.commmm">Seed Inc.</a></div>
+        <div class="clearfix"></div>
+      </div>
 
       <div id="page-cover">
         <div id="cover-close"></div>

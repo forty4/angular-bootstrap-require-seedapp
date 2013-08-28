@@ -1,9 +1,9 @@
 define(['controllers/controllers'],
   function(controllers) {
     'use strict';
-    controllers.controller('ExamplesCtrl', ['$scope', '$$log',
+    controllers.controller('ExampleCtrl', ['$scope', '$$log',
       function($scope, $$log) {
-        $$log.setCategory('ExamplesCtrl');
+        $$log.setCategory('ExampleCtrl');
       }
     ]);
   }

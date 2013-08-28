@@ -13,10 +13,12 @@ require.config({
     domReady: '../components/requirejs-domready/domReady',
     i18n: '../components/requirejs-i18n/i18n',
     lodash: '../components/lodash/lodash',
+    bootstrapCollapse: '../components/bootstrap/js/collapse',
+    bootstrapDropdown: '../components/bootstrap/js/dropdown',
+    bootstrapButton: '../components/bootstrap/js/button',
     jqueryMobileOrientationChange: 'vendor/jquery-mobile/orientationchange',
     jqueryMobileSupportOrientation: 'vendor/jquery-mobile/jquery.mobile.support.orientation',
-    jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize',
-    bootstrap: 'vendor/bootstrap/dist/js/bootstrap'
+    jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize'
   },
   shim: {
     angular: {
@@ -38,6 +40,15 @@ require.config({
     sidr: {
       deps: [ 'jquery', 'jqueryAnimateEnhanced' ]
     },
+    bootstrapCollapse: {
+      deps: [ 'jquery' ]
+    },
+    bootstrapDropdown: {
+      deps: [ 'jquery' ]
+    },
+    bootstrapButton: {
+      deps: [ 'jquery' ]
+    },
     jqueryAnimateEnhanced: {
       deps: [ 'jquery' ]
     },
@@ -46,9 +57,6 @@ require.config({
     },
     jqueryMobileOrientationChange: {
       deps: [ 'jquery', 'jqueryMobileSupportOrientation', 'jqueryMobileThrottledResize']
-    },
-    bootstrap: {
-      deps: [ 'jquery' ]
     }
   },
   locale: localStorage.getItem('locale') || 'en'
@@ -68,8 +76,10 @@ require([
 
   // 3rd party libraries
   'lodash',
+  'bootstrapCollapse',
+  'bootstrapDropdown',
+  'bootstrapButton',
   'jqueryMobileOrientationChange',
-  'bootstrap',
 
   // User scripts - Any individual controller, service, directive or filter file
   'services/restService',
