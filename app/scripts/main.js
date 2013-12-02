@@ -2,6 +2,7 @@
 require.config({
   paths: {
     angular: '../components/angular/angular',
+    angularRoute: '../components/angular-route/angular-route',
     angularResource: '../components/angular-resource/angular-resource',
     angularCookies: '../components/angular-cookies/angular-cookies',
     angularSanitize: '../components/angular-sanitize/angular-sanitize',
@@ -12,18 +13,22 @@ require.config({
     touchSwipe: '../components/jquery-touchswipe/jquery.touchSwipe',
     domReady: '../components/requirejs-domready/domReady',
     i18n: '../components/requirejs-i18n/i18n',
-    lodash: '../components/lodash/lodash',
+    lodash: '../components/lodash/dist/lodash',
     bootstrapCollapse: '../components/bootstrap/js/collapse',
     bootstrapDropdown: '../components/bootstrap/js/dropdown',
     bootstrapButton: '../components/bootstrap/js/button',
     jqueryMobileOrientationChange: 'vendor/jquery-mobile/orientationchange',
     jqueryMobileSupportOrientation: 'vendor/jquery-mobile/jquery.mobile.support.orientation',
-    jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize'
+    jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize',
+    pace: '../components/pace/pace'
   },
   shim: {
     angular: {
       deps: [ 'jquery'],
       exports: 'angular'
+    },
+    angularRoute: {
+      deps: [ 'angular' ]
     },
     angularResource: {
       deps: [ 'angular' ]
@@ -69,6 +74,7 @@ require([
   'domReady',
 
   // angular libraries
+  'angularRoute',
   'angularResource',
   'angularCookies',
   'angularSanitize',
@@ -151,7 +157,7 @@ require([
       mainApp = mainApp || angular.bootstrap(document, ['seedsApp']);
 
       // The following is required if you want AngularJS Scenario tests to work
-      $('html').addClass('ng-app: seedsApp');
+      //$('html').addClass('ng-app: seedsApp');
     });
   }
 );

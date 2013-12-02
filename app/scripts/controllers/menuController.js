@@ -1,11 +1,12 @@
 define([
   'controllers/controllers',
   'i18n!nls/labels',
+  'pace',
   'jqueryAnimateEnhanced',
   'sidr',
   'touchSwipe'
 ],
-    function(controllers, labels) {
+    function(controllers, labels, pace) {
       'use strict';
       controllers.controller('MenuCtrl', ['$scope', '$timeout', '$location', '$$log',
         function($scope, $timeout, $location, $$log) {
@@ -58,6 +59,12 @@ define([
           $$log.setCategory('MenuCtrl');
 
           $scope.labels = labels;
+
+          pace.start({
+            ajax: {
+              trackWebSockets: false
+            }
+          });
 
           if ($(window).width() < 768) {
             enableSwipeEvent();

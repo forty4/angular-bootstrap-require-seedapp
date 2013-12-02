@@ -50,7 +50,9 @@
 
     <!-- Add your site or application content here -->
     <div class="container" id="main-container">
-      <div class="root-header" ng-include="'views/root-header.html'" ng-controller="MenuCtrl"></div>
+      <div class="root-header" ng-controller="MenuCtrl">
+        <div ng-include="'views/root-header.html'"></div>
+      </div>
       <div class="clearfix"></div>
       <div class="main-view" ui-view></div>
       <div class="clearfix"></div>

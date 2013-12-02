@@ -64,6 +64,12 @@
   min-height: 500px;
 }
 
+.container {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .container > div[ui-view] {
   width: 90%;
   margin-right: auto;
@@ -168,6 +174,11 @@
 }
 
 @media (max-width: 480px) {
+  .container > div[ui-view] {
+    width: 97%;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .box-same-group {
     margin-right: -10px;
     margin-left: -10px;
@@ -327,6 +338,48 @@
   display: none;
   width: 50px;
   height: 40px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*	Examples
+/*-----------------------------------------------------------------------------------*/
+
+.bs-glyphicons {
+  padding-bottom: 1px;
+  padding-left: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.bs-glyphicons li {
+  float: left;
+  width: 25%;
+  height: 115px;
+  padding: 10px;
+  margin: 0 -1px -1px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.bs-glyphicons .glyphicon {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.bs-glyphicons .glyphicon-class {
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .bs-glyphicons li {
+    width: 12.5%;
+  }
 }
 
 /*-----------------------------------------------------------------------------------*/
