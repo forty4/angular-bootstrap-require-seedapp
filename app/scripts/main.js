@@ -7,7 +7,7 @@ require.config({
     angularCookies: '../components/angular-cookies/angular-cookies',
     angularSanitize: '../components/angular-sanitize/angular-sanitize',
     angularUIRouter: '../components/angular-ui-router/release/angular-ui-router',
-    jquery: '../components/jquery/jquery',
+    jquery: '../components/jquery/dist/jquery',
     sidr: '../components/sidr/jquery.sidr.min',
     jqueryAnimateEnhanced: '../components/jquery.animate-enhanced/jquery.animate-enhanced.min',
     touchSwipe: '../components/jquery-touchswipe/jquery.touchSwipe',
@@ -17,9 +17,9 @@ require.config({
     bootstrapCollapse: '../components/bootstrap/js/collapse',
     bootstrapDropdown: '../components/bootstrap/js/dropdown',
     bootstrapButton: '../components/bootstrap/js/button',
-    jqueryMobileOrientationChange: 'vendor/jquery-mobile/orientationchange',
-    jqueryMobileSupportOrientation: 'vendor/jquery-mobile/jquery.mobile.support.orientation',
-    jqueryMobileThrottledResize: 'vendor/jquery-mobile/throttledresize',
+    jqueryMobileOrientationChange: '../vendor/jquery-mobile/orientationchange',
+    jqueryMobileSupportOrientation: '../vendor/jquery-mobile/jquery.mobile.support.orientation',
+    jqueryMobileThrottledResize: '../vendor/jquery-mobile/throttledresize',
     pace: '../components/pace/pace'
   },
   shim: {
@@ -63,8 +63,7 @@ require.config({
     jqueryMobileOrientationChange: {
       deps: [ 'jquery', 'jqueryMobileSupportOrientation', 'jqueryMobileThrottledResize']
     }
-  },
-  locale: localStorage.getItem('locale') || 'en'
+  }
 });
 
 require([
